@@ -19,11 +19,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple, // primarySwatch adjust color
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
-      // debugShowCheckedModeBanner: false, // removes debug tag from the app
+      debugShowCheckedModeBanner: false, // removes debug tag from the app
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
-      // initialRoute: "/home",
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         "/": (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),

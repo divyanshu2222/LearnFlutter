@@ -12,10 +12,29 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          child: Text("Welcome to $days days of flutter by $name"),
+          child: Text(
+              "Welcome to $days days of flutter by $name \n ${context.runtimeType.toString()}"),
         ),
       ),
       drawer: MyDrawer(),
     );
   }
 }
+
+
+
+
+
+// Container(
+      //   constraints: BoxConstraints(
+      //     minHeight: 70,
+      //     maxHeight: 200,
+      //     minWidth: 70,
+      //     maxWidth: 200,
+      //   ),
+      //   child: Container(
+      //     height: 73,
+      //     width: 12,
+      //     color: Colors.red,
+      //   ),
+      // ),

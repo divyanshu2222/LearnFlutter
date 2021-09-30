@@ -15,6 +15,7 @@ class _HomePageState extends State<HomePage> {
 
   final String name = "Divyanshu Gupta";
 
+// It gives data before calling build method
   @override
   void initState() {
     super.initState();
@@ -22,7 +23,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    await Future.delayed(Duration(seconds: 2));
+    // await Future.delayed(Duration(seconds: 2));
     final catalogJson =
         await rootBundle.loadString("assets/files/catalog.json");
     final decodedData = jsonDecode(catalogJson);
@@ -42,16 +43,12 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-            ? ListView.builder(
-                itemCount: CatalogModel.items.length,
-                itemBuilder: (context, index) => ItemWidget(
-                  item: CatalogModel.items[index],
-                ),
-              )
-            : Center(
-                child: CircularProgressIndicator(),
-              ),
+        child: ListView.builder(
+          itemCount: CatalogModel.items.length,
+          itemBuilder: (context, index) => ItemWidget(
+            item: CatalogModel.items[index],
+          ),
+        ),
       ),
       drawer: MyDrawer(),
     );
